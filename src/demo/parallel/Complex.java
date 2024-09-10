@@ -29,7 +29,10 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package demo.parallel;
+import static org.junit.jupiter.api.Assertions.*;
+class ComplexTest {
 
+}
 
 /**
  * A complex number is a number that can be expressed in the form a + b * i, where
@@ -100,6 +103,19 @@ public class Complex {
         im = imag;
         return this;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Complex other = (Complex)obj;
+        return re == other.re && im == other.im;
+    }
+
 
     /**
      * Square of Complex object's length, we're using square of length to 
